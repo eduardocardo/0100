@@ -12,8 +12,7 @@ public class BallDemo
 {
     private Canvas myCanvas;
     
-    //array que almacena los diametros de las bolas
-    private int[] diametro;
+    
     //array que almacena el numero de bolas
     private BouncingBall[] balls;
 
@@ -25,11 +24,7 @@ public class BallDemo
         myCanvas = new Canvas("Ball Demo", 600, 500);
         
 
-        diametro = new int[3];
-        diametro[0] = 15;
-        diametro[1] = 20;
-        diametro[2] = 25;
-
+        
         balls = null;
 
     }
@@ -55,7 +50,9 @@ public class BallDemo
             Color color = new Color((rnd.nextInt(256)),(rnd.nextInt(256)),(rnd.nextInt(256)));
             int xPos = rnd.nextInt(75);
             int yPos = rnd.nextInt(75);
-            balls[i] = new BouncingBall(xPos, yPos, diametro[rnd.nextInt(diametro.length)], 
+            //se crea una bola con diametro aleatorio comprendido entre 5 y 30
+            int diametro = rnd.nextInt(26) + 5; 
+            balls[i] = new BouncingBall(xPos, yPos, diametro, 
                        color, ground, myCanvas);
             balls[i].draw();
             
