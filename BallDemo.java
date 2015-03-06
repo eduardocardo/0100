@@ -49,16 +49,16 @@ public class BallDemo
 
         // crate and show the balls
         Random rnd = new Random();
-        int xPos = 50;
-        int yPos = 50;
+        
         for(int i =0;i < numberBalls;i++)
         {
             Color color = new Color((rnd.nextInt(256)),(rnd.nextInt(256)),(rnd.nextInt(256)));
+            int xPos = rnd.nextInt(75);
+            int yPos = rnd.nextInt(75);
             balls[i] = new BouncingBall(xPos, yPos, diametro[rnd.nextInt(diametro.length)], 
                        color, ground, myCanvas);
             balls[i].draw();
-            xPos = xPos + 10;
-            yPos = yPos + 10;
+            
         }
 
         // make them bounce
