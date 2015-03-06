@@ -67,8 +67,11 @@ public class BallDemo
                 balls[i].move();
             }
             // stop once ball has travelled a certain distance on x axis
-            if(balls[rnd.nextInt(numberBalls)].getXPosition() >= 550) {
-                finished = true;
+            for(int i = 0; i < numberBalls; i++)
+            {
+                if(balls[i].getXPosition() >= 550) {
+                    finished = true;
+                }
             }
         }
 
